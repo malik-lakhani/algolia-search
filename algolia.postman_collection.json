@@ -1,0 +1,64 @@
+{
+	"variables": [],
+	"info": {
+		"name": "algolia",
+		"_postman_id": "90da347e-6876-f41c-1271-6b8e12efa496",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/users",
+			"request": {
+				"url": "http://localhost:3000/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"users\": [\n\t\t{\n\t\t\t  \"name\": \"Rajesh Parmat\",\n\t\t      \"street\": \"Raiya Road\",\n\t\t      \"city\": \"Rajkot\",\n\t\t      \"state\": \"GJ\",\n\t\t      \"gender\": \"Male\",\n\t\t      \"birthday\": \"6/1/1995\",\n\t\t      \"age\": 22,\n\t\t      \"phone\": \"8460633280\",\n\t\t      \"email\": \"malik@improwised.com\"\n\t\t},\n\t\t{\n\t\t\t  \"name\": \"Bhumika dobariya\",\n\t\t      \"street\": \"Raiya Road\",\n\t\t      \"city\": \"Rajkot\",\n\t\t      \"state\": \"GJ\",\n\t\t      \"gender\": \"Male\",\n\t\t      \"birthday\": \"5/18/1991\",\n\t\t      \"age\": 23,\n\t\t      \"phone\": \"9898376106\",\n\t\t      \"email\": \"azim@improwised.com\"\n\t\t}\n\t]\n}"
+				},
+				"description": "add users to algolia users_demo index"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/search?name=azim lakhani",
+			"request": {
+				"url": "http://localhost:3000/users?gender=Male&states=Gj|nj&is_adult=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "search by name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/search/gender",
+			"request": {
+				"url": "http://localhost:3000/users/gender?gender=male&page=9",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "search by gender"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/adult",
+			"request": {
+				"url": "http://localhost:3000/users/adult",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
